@@ -6,6 +6,7 @@ import android.example.todoapp.MainActivity;
 import android.example.todoapp.Model.ToDoModel;
 import android.example.todoapp.R;
 import android.example.todoapp.Utils.DataBaseHelper;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,6 +96,18 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.MyViewHolder> 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mCheckBox = itemView.findViewById(R.id.mcheckbox);
+            mCheckBox.setBackgroundColor(Color.parseColor("#ffffff"));
+
+            mCheckBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mCheckBox.isChecked()) {
+                        mCheckBox.setBackgroundColor(Color.parseColor("#cbff75"));
+                    }
+                    else
+                        mCheckBox.setBackgroundColor(Color.parseColor("#ffffff"));
+                }
+            });
         }
     }
 }

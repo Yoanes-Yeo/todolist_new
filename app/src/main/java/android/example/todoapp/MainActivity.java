@@ -6,11 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.example.todoapp.Adapter.ToDoAdapter;
 import android.example.todoapp.Model.ToDoModel;
 import android.example.todoapp.Utils.DataBaseHelper;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -19,6 +21,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnDialogCloseListner{
+
+    private Button buttonCalc;
 
     private RecyclerView mRecyclerview;
     private FloatingActionButton fab;
@@ -29,6 +33,15 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Button
+        buttonCalc = (Button) findViewById(R.id.buttonCalc);
+        buttonCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCalc();
+            }
+        });
 
         mRecyclerview = findViewById(R.id.recyclerview);
         fab = findViewById(R.id.fab);
@@ -60,5 +73,10 @@ public class MainActivity extends AppCompatActivity implements OnDialogCloseList
         Collections.reverse(mList);
         adapter.setTasks(mList);
         adapter.notifyDataSetChanged();
+    }
+
+    public void openCalc() {
+        Intent intent =new Intent(this, Calculator.class);
+        startActivity(intent);
     }
 }

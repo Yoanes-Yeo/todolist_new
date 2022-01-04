@@ -17,12 +17,16 @@
         android:textColor="@color/black"
         android:textSize="32sp"
         android:textStyle="bold" />
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recyclerview"
         android:layout_below="@id/textview"
-        android:nestedScrollingEnabled="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp"
+        android:nestedScrollingEnabled="true" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +35,19 @@
         android:id="@+id/fab"
         android:src="@drawable/ic_baseline_add_24"
         android:layout_margin="30dp"/>
+
+    <Button
+        android:id="@+id/buttonCalc"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="18dp"
+        android:layout_toEndOf="@+id/textview"
+        app:icon="@drawable/ic_baseline_calculate_24"
+        app:iconSize="25sp" />
 
 
 </RelativeLayout>

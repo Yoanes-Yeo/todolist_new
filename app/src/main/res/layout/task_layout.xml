@@ -14,12 +14,12 @@
         android:padding="8dp" >
 
         <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/mcheckbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:buttonTint="@color/black"
-            android:id="@+id/mcheckbox"
-            android:text="This is Task 1"
-            android:paddingStart="8dp"/>
+            android:paddingStart="8dp"
+            android:text="This is Task 1" />
 
 
     </RelativeLayout>
